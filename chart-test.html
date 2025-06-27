@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: white;
+            padding: 20px;
+            font-family: Arial;
+        }
+        #chartContainer {
+            width: 600px;
+            height: 400px;
+            background: black;
+            border: 2px solid lime;
+            position: relative;
+        }
+        canvas {
+            background: transparent !important;
+        }
+        button {
+            background: lime;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Chart Test</h1>
+    <p>This is a minimal test to see if Chart.js works at all.</p>
+    
+    <button onclick="testChart()">Create Test Chart</button>
+    <button onclick="testLine()">Create Line Chart</button>
+    <button onclick="testBars()">Create Bar Chart</button>
+    
+    <div id="status" style="margin: 10px 0; color: yellow;"></div>
+    
+    <div id="chartContainer">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        let chart = null;
+        
+        function log(msg) {
+            document.getElementById('status').innerHTML = msg;
+            console.log(msg);
+        }
+        
+        function testChart() {
+            log('Testing basic chart...');
+            
+            if (typeof Chart === 'undefined') {
+                log('❌ Chart.js not loaded!');
+                return;
+            }
+            
+            const canvas = document.getElementById('myChart');
+            const ctx = canvas.getContext('2d');
+            
+            if (chart) chart.destroy();
+            
+            chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow'],
+                    datasets: [{
+                        data: [300, 50, 100],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+            
+            log('✅ Test chart created!');
+        }
+        
+        function testLine() {
+            log('Testing line chart...');
+            
+            const canvas = document.getElementById('myChart');
+            const ctx = canvas.getContext('2d');
+            
+            if (chart) chart.destroy();
+            
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [12, 19, 3, 5, 2],
+                        borderColor: 'lime',
+                        backgroundColor: 'rgba(0, 255, 0, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: 'white' } }
+                    },
+                    scales: {
+                        x: { ticks: { color: 'white' } },
+                        y: { ticks: { color: 'white' } }
+                    }
+                }
+            });
+            
+            log('✅ Line chart created!');
+        }
+        
+        function testBars() {
+            log('Testing bar chart...');
+            
+            const canvas = document.getElementById('myChart');
+            const ctx = canvas.getContext('2d');
+            
+            if (chart) chart.destroy();
+            
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['A', 'B', 'C', 'D', 'E'],
+                    datasets: [{
+                        data: [10, 20, 15, 25, 18],
+                        backgroundColor: ['red', 'green', 'blue', 'yellow', 'orange']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: 'white' } },
+                        y: { ticks: { color: 'white' } }
+                    }
+                }
+            });
+            
+            log('✅ Bar chart created!');
+        }
+        
+        // Auto-test on load
+        window.onload = function() {
+            log('Page loaded. Click buttons to test charts.');
+            setTimeout(() => {
+                log('Auto-testing...');
+                testChart();
+            }, 1000);
+        };
+    </script>
+</body>
+</html>

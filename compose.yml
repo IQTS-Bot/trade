@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  trading-bot:
+    build: .
+    ports:
+      - "3000:3000"
+      - "3001:3001" # WebSocket
+    environment:
+      - ALPACA_KEY=${ALPACA_KEY}
+      - ALPACA_SECRET=${ALPACA_SECRET}
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+    volumes:
+      - ./config:/app/config
+      - ./audio:/app/client/public/audio
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  mongodb:
+    image: mongo:5.0
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

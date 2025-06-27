@@ -1,0 +1,217 @@
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent: #00ffaa;
+    --danger: #ff5555;
+    --border: #333333;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.ai-text {
+    color: var(--accent);
+    text-shadow: 0 0 8px rgba(0, 255, 170, 0.3);
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    background-color: var(--accent);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.chart-container {
+    grid-column: span 1;
+    height: 400px;
+}
+
+.positions-container {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.positions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.position-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+.position-profit {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.position-loss {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px 0;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-start {
+    background-color: var(--accent);
+    color: #000;
+}
+
+.btn-stop {
+    background-color: var(--danger);
+    color: white;
+}
+
+.risk-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.risk-control input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+}
+
+.activity-container {
+    grid-column: span 1;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.activity-log {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.log-entry {
+    padding: 8px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+}
+
+.log-entry.buy {
+    border-left: 3px solid var(--accent);
+}
+
+.log-entry.sell {
+    border-left: 3px solid var(--danger);
+}
+
+.symbol-selector select {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 5px;
+    border-radius: 4px;
+}

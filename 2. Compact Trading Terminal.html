@@ -1,0 +1,52 @@
+<!-- client/src/components/Terminal.js -->
+export function TradingTerminal() {
+  return (
+    <div className="terminal-container">
+      <div className="price-columns">
+        {['AAPL', 'MSFT', 'TSLA', 'NVDA'].map(symbol => (
+          <PriceTicker key={symbol} symbol={symbol} />
+        ))}
+      </div>
+
+      <div className="terminal-main">
+        {/* Left Panel */}
+        <div className="order-panel">
+          <h3>AI Controls</h3>
+          <div className="knob-control">
+            <Knob 
+              min={0} 
+              max={100} 
+              value={riskLevel} 
+              onChange={setRiskLevel}
+            />
+            <label>Risk Level</label>
+          </div>
+          <button className="big-red-button">EMERGENCY STOP</button>
+        </div>
+
+        {/* Center Chart */}
+        <div className="terminal-chart">
+          <CandlestickChart 
+            data={chartData}
+            indicators={['volume', 'sma50', 'sma200']}
+          />
+        </div>
+
+        {/* Right Log */}
+        <div className="trade-log">
+          <h3>Execution Log</h3>
+          <div className="log-entries">
+            {trades.map(trade => (
+              <LogEntry 
+                key={trade.id}
+                type={trade.side}
+                symbol={trade.symbol}
+                price={trade.price}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
