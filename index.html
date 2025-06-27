@@ -1406,6 +1406,41 @@
                 </div>
             </div>
         </div>
+
+        <!-- Personal Notes Section -->
+        <div class="glassmorphism-card" id="personalNotesCard" style="margin-top: 25px;">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <i class="fas fa-sticky-note"></i>
+                    Personal Notes
+                </h2>
+            </div>
+            <div style="padding: 20px;">
+                <label for="personalNotes" style="color: var(--text-secondary); font-size: 0.95rem;">Store your API keys, Telegram ID, or any private info here. <b>Only you</b> can see these notes (saved in your browser).</label>
+                <textarea id="personalNotes" rows="5" style="width:100%; margin-top:10px; background:rgba(0,0,0,0.2); color:var(--text-primary); border-radius:8px; border:1px solid var(--border); padding:12px; font-size:1rem;"></textarea>
+                <button id="saveNotesBtn" class="btn" style="margin-top:12px; background:var(--accent); color:#000;">Save Notes</button>
+                <span id="notesSavedMsg" style="margin-left:15px; color:var(--positive); display:none;">Saved!</span>
+            </div>
+        </div>
+
+        <script>
+        // Personal Notes save/load logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const notesArea = document.getElementById('personalNotes');
+            const saveBtn = document.getElementById('saveNotesBtn');
+            const savedMsg = document.getElementById('notesSavedMsg');
+            // Load notes from localStorage
+            if (localStorage.getItem('personalNotes')) {
+                notesArea.value = localStorage.getItem('personalNotes');
+            }
+            // Save notes to localStorage
+            saveBtn.addEventListener('click', function() {
+                localStorage.setItem('personalNotes', notesArea.value);
+                savedMsg.style.display = 'inline';
+                setTimeout(() => { savedMsg.style.display = 'none'; }, 1500);
+            });
+        });
+        </script>
     </div>
 
     <!-- Audio Elements -->
