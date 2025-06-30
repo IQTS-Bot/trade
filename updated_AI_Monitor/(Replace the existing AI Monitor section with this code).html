@@ -1,0 +1,194 @@
+<div class="glassmorphism-card chart-container" style="min-height: 600px;">
+    <!-- Trading Activity Indicator -->
+    <div id="activityIndicator" class="activity-indicator">
+        <div class="indicator-pulse"></div>
+        <div class="indicator-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+    
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-brain"></i>
+            AI Trading Monitor (Scalp + Swing)
+        </h2>
+        <div class="ai-mode-toggles">
+            <button class="ai-mode-btn active" data-mode="scalp">Scalp Mode</button>
+            <button class="ai-mode-btn" data-mode="swing">Swing Mode</button>
+        </div>
+    </div>
+    
+    <div class="ai-monitor-container">
+        <!-- Performance Dashboard (Optimized for Scalp/Swing) -->
+        <div class="ai-performance-dashboard">
+            <!-- Scalping-Specific Metrics -->
+            <div class="performance-metric" data-metric="scalp-speed">
+                <div class="metric-counter" style="border-color: var(--accent);">
+                    <span class="counter-value">28ms</span>
+                </div>
+                <span class="metric-label">Avg Execution</span>
+                <span class="metric-trend">↓ 5ms</span>
+            </div>
+            
+            <div class="performance-metric" data-metric="win-rate">
+                <div class="metric-gauge">
+                    <div class="gauge-fill" style="height: 72%;"></div>
+                </div>
+                <span class="metric-label">Win Rate</span>
+                <span class="metric-value">72.5%</span>
+            </div>
+            
+            <!-- Swing-Specific Metrics -->
+            <div class="performance-metric" data-metric="hold-time">
+                <div class="metric-counter" style="border-color: var(--warning);">
+                    <span class="counter-value">4.2h</span>
+                </div>
+                <span class="metric-label">Avg Hold</span>
+                <span class="metric-trend">↑ 0.3h</span>
+            </div>
+            
+            <div class="performance-metric" data-metric="profit-factor">
+                <div class="metric-gauge">
+                    <div class="gauge-fill" style="height: 88%;"></div>
+                </div>
+                <span class="metric-label">Profit Factor</span>
+                <span class="metric-value">2.8x</span>
+            </div>
+            
+            <!-- Shared Metrics -->
+            <div class="performance-metric" data-metric="positions">
+                <div class="metric-counter" style="border-color: var(--positive);">
+                    <span class="counter-value">14</span>
+                </div>
+                <span class="metric-label">Live Positions</span>
+                <span class="metric-trend">↗ 3</span>
+            </div>
+        </div>
+        
+        <!-- Task Timeline (Optimized for Scalp/Swing) -->
+        <div class="ai-task-timeline">
+            <div class="timeline-header">
+                <span>Task</span>
+                <span>Mode</span>
+                <span>Progress</span>
+                <span>P&L Impact</span>
+            </div>
+            
+            <!-- Scalping Tasks -->
+            <div class="timeline-item completed" data-strategy="scalp">
+                <div class="task-info">
+                    <div class="task-icon" style="background: rgba(0,255,170,0.1);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <span class="task-name">Order Execution</span>
+                </div>
+                <div class="task-mode">
+                    <span class="strategy-badge scalp">SCALP</span>
+                </div>
+                <div class="task-status">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="task-impact">
+                    +$142.50
+                </div>
+            </div>
+            
+            <div class="timeline-item processing" data-strategy="scalp">
+                <div class="task-info">
+                    <div class="task-icon" style="background: rgba(0,255,170,0.1);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="task-name">Liquidity Scan</span>
+                </div>
+                <div class="task-mode">
+                    <span class="strategy-badge scalp">SCALP</span>
+                </div>
+                <div class="task-status">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="task-impact">
+                    <span style="color: var(--text-secondary);">Pending</span>
+                </div>
+            </div>
+            
+            <!-- Swing Tasks -->
+            <div class="timeline-item processing" data-strategy="swing">
+                <div class="task-info">
+                    <div class="task-icon" style="background: rgba(255,170,0,0.1);">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <span class="task-name">Trend Analysis</span>
+                </div>
+                <div class="task-mode">
+                    <span class="strategy-badge swing">SWING</span>
+                </div>
+                <div class="task-status">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="task-impact">
+                    +$320.80
+                </div>
+            </div>
+            
+            <div class="timeline-item queued" data-strategy="swing">
+                <div class="task-info">
+                    <div class="task-icon" style="background: rgba(255,170,0,0.1);">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                    <span class="task-name">Stop Adjustment</span>
+                </div>
+                <div class="task-mode">
+                    <span class="strategy-badge swing">SWING</span>
+                </div>
+                <div class="task-status">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="task-impact">
+                    <span style="color: var(--text-secondary);">Queued</span>
+                </div>
+            </div>
+            
+            <!-- Shared Tasks -->
+            <div class="timeline-item processing" data-strategy="both">
+                <div class="task-info">
+                    <div class="task-icon" style="background: rgba(0,100,255,0.1);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span class="task-name">Risk Check</span>
+                </div>
+                <div class="task-mode">
+                    <span class="strategy-badge both">BOTH</span>
+                </div>
+                <div class="task-status">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+                <div class="task-impact">
+                    <span style="color: var(--warning);">-$85.00</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Strategy Distribution -->
+        <div class="task-distribution">
+            <h4>Strategy Allocation</h4>
+            <div class="distribution-chart">
+                <div class="chart-bar" data-strategy="scalp" style="height: 68%;">
+                    <span class="bar-label">Scalp (68%)</span>
+                </div>
+                <div class="chart-bar" data-strategy="swing" style="height: 32%;">
+                    <span class="bar-label">Swing (32%)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

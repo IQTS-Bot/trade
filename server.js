@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const WebSocket = require('ws');
 const { AlpacaService } = require('./services/alpaca');
 const { TelegramService } = require('./services/telegram');
 const { AnalysisWorker } = require('./workers/after-hours');
@@ -21,7 +22,7 @@ const telegram = new TelegramService(
 );
 
 // Start workers
-const marketWorker = require('./workers/market-hours')({ alpaca, telegram });
+const marketWorker = require('./market-hours')({ alpaca, telegram });
 const analysisWorker = new AnalysisWorker({ alpaca, telegram });
 
 // API endpoints
@@ -36,17 +37,34 @@ app.post('/api/control', (req, res) => {
   res.sendStatus(200);
 });
 
+// Start the server
+const server = app.listen(3000, async () => {
+  console.log('Trading bot running on port 3000');
+  
+  // Initialize services
+  await alpaca.connect();
+  await telegram.connect();
+  
+  // Start workers
+  marketWorker.start();
+  analysisWorker.start();
+  
+  console.log('All services initialized and workers started');
+});
+
 // Secure WebSocket for real-time updates
 const wss = new WebSocket.Server({ server });
 wss.on('connection', (ws) => {
+  console.log('WebSocket client connected');
+  
   ws.on('message', (message) => {
-    SecurityMiddleware.validateMessage(message);
-    // Handle client commands
+    if (SecurityMiddleware.validateMessage(message.toString())) {
+      // Handle client commands
+      console.log('Received valid WebSocket message:', message.toString());
+    }
   });
-});
-
-app.listen(3000, () => {
-  console.log('Trading bot running on port 3000');
-  marketWorker.start();
-  analysisWorker.start();
+  
+  ws.on('close', () => {
+    console.log('WebSocket client disconnected');
+  });
 });

@@ -1,0 +1,197 @@
+/* Trade Receipts */
+.receipt {
+    position: relative;
+    overflow: hidden;
+}
+
+.receipt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent var(--card-bg) transparent transparent;
+    z-index: 1;
+}
+
+.receipt .btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.receipt .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* AI Activity Monitor */
+#aiActivityLog {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) rgba(0,0,0,0.2);
+}
+
+#aiActivityLog::-webkit-scrollbar {
+    width: 5px;
+}
+
+#aiActivityLog::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+}
+
+#aiActivityLog::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 3px;
+}
+
+/* Manual Controls */
+#manualControlPanel .input-group {
+    margin-bottom: 15px;
+}
+
+#manualControlPanel .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #aiActivityLog {
+        font-size: 0.8rem;
+    }
+    
+    .receipt .btn {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
+    
+    #manualControlPanel {
+        grid-column: span 1;
+    }
+}
+
+/* AI Monitor Container Enhancements */
+.ai-monitor-container {
+    background: rgba(20, 20, 40, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    min-height: 600px; /* Match height with AI Control panel */
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-monitor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Enhanced Performance Dashboard */
+.ai-performance-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.performance-metric {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.performance-metric:hover {
+    transform: translateY(-2px);
+}
+
+/* Enhanced Timeline */
+.ai-task-timeline {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin: 20px 0;
+    padding-right: 10px;
+}
+
+.ai-task-timeline::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ai-task-timeline::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+/* Task Distribution Section */
+.task-distribution {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.distribution-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 120px;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.chart-bar {
+    flex: 1;
+    background: rgba(0, 255, 170, 0.1);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    min-width: 40px;
+    transition: height 0.3s ease;
+}
+
+/* New AI Activity Stats Section */
+.ai-activity-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-size: 1.5em;
+    color: var(--text-primary);
+    margin: 5px 0;
+}
+
+.stat-trend {
+    font-size: 0.8em;
+    color: var(--positive);
+}
+
+.stat-trend.negative {
+    color: var(--negative);
+}
