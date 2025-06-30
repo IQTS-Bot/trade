@@ -1,1 +1,0 @@
-npm install lightweight-charts react-tradingview-widget

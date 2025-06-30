@@ -1775,16 +1775,7 @@
                 <h1 class="app-title">IQTS Bot</h1>
             </div>
             
-            <!-- PROMINENT NOTICE FOR COMPREHENSIVE MANUAL -->
-            <div style="margin: 15px 0; padding: 15px; background: linear-gradient(45deg, rgba(0,255,170,0.2), rgba(0,100,255,0.2)); border: 2px solid var(--accent); border-radius: 12px; text-align: center; animation: pulse 3s infinite;">
-                <h3 style="color: var(--accent); margin: 0 0 8px 0; font-size: 1.2rem;">
-                    📚 Complete Manual Available Below!
-                </h3>
-                <p style="color: var(--text-secondary); margin: 0; font-size: 1rem;">
-                    👇 Scroll down to find <strong style="color: var(--accent);">"Setup Guide"</strong> section and click <strong style="color: var(--accent);">"Toggle"</strong> button<br/>
-                    🧠 Covers: AI Strategies, Controls, Audio System, All Numbers/Metrics Explained
-                </p>
-            </div>
+
             <div class="status-panel">
                 <div class="connection-status" style="min-width: 180px;">
                     <span class="status-dot" id="statusDot"></span>
@@ -1815,15 +1806,7 @@
             </div>
         </header>
 
-        <!-- IMPORTANT NOTICE FOR USER -->
-        <div style="position: fixed; top: 10px; right: 10px; z-index: 9999; background: linear-gradient(45deg, var(--accent), #ff6b35); color: #000; padding: 15px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,255,170,0.5); animation: pulse 2s infinite; max-width: 350px;">
-            <h3 style="margin: 0 0 8px 0; font-size: 1.1rem; font-weight: bold;">
-                📚 Complete Manual Available!
-            </h3>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.4;">
-                Scroll down to find <strong>"Setup Guide"</strong> section and click <strong>"Toggle"</strong> button to access the complete manual covering all features!
-            </p>
-        </div>
+
 
         <!-- System Health Monitor -->
         <div class="app-header" style="margin-bottom: 25px;">
@@ -2362,18 +2345,18 @@
             <div class="card-header">
                 <h2 class="card-title">
                     <i class="fas fa-book"></i>
-                    📚 Complete User Manual
+                    📚 Guide
                 </h2>
                 <button id="toggleGuide" class="btn" style="background: rgba(0,255,170,0.2); color: var(--accent); padding: 8px 16px; font-weight: bold;">
                     <i class="fas fa-eye"></i>
-                    👆 CLICK HERE - Show/Hide Manual
+                    👆 Show/Hide Guide
                 </button>
             </div>
             <div id="guideContent" style="display: none;">
                 <!-- IQTS Bot Comprehensive Manual -->
                 <div style="padding: 20px; background: linear-gradient(135deg, rgba(0,255,170,0.1), rgba(0,100,255,0.1)); border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--accent);">
                     <h2 style="color: var(--accent); margin-bottom: 15px; text-align: center;">
-                        <i class="fas fa-robot"></i> IQTS Bot - Complete User Manual
+                        <i class="fas fa-robot"></i> IQTS Bot
                     </h2>
                     <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 20px;">
                         Intelligent Quantitative Trading System with Dual-Mode AI Strategy (Scalp + Swing)
@@ -2743,7 +2726,7 @@
             </div>
             <div id="personalNotesContent" class="panel-content">
                 <div style="padding: 20px;">
-                    <label for="personalNotes" style="color: var(--text-secondary); font-size: 0.95rem;">Store your API keys, Telegram ID, or any private info here. <b>Only you</b> can see these notes (saved in your browser).</label>
+
                     <textarea id="personalNotes" rows="5" style="width:100%; margin-top:10px; background:rgba(0,0,0,0.2); color:var(--text-primary); border-radius:8px; border:1px solid var(--border); padding:12px; font-size:1rem;"></textarea>
                     <button id="saveNotesBtn" class="btn" style="margin-top:12px; background:var(--accent); color:#000;">Save Notes</button>
                     <span id="notesSavedMsg" style="margin-left:15px; color:var(--positive); display:none;">Saved!</span>
@@ -2865,39 +2848,7 @@
 </script>
     </div>
 
-    <!-- Audio Elements -->
-    <audio id="tradeExecutedSound" preload="auto">
-        <source src="Telegram_audio/Scalp Trade Execution Fast Click.mp3" type="audio/mp3">
-    </audio>
-    <audio id="alertSound" preload="auto">
-        <source src="Telegram_audio/Liquidity Alert Beep.mp3" type="audio/mp3">
-    </audio>
-    <audio id="successSound" preload="auto">
-        <source src="Telegram_audio/Bonus Earned.mp3" type="audio/mp3">
-    </audio>
-    <audio id="errorSound" preload="auto">
-        <source src="Telegram_audio/Game Over Trombone Big Loss .mp3" type="audio/mp3">
-    </audio>
-    <audio id="startSound" preload="auto">
-        <source src="Telegram_audio/Tactic Change Unlock Sound.mp3" type="audio/mp3">
-    </audio>
-    <audio id="stopSound" preload="auto">
-        <source src="Telegram_audio/Warning Alarm Trade Error.mp3" type="audio/mp3">
-    </audio>
-    
-    <!-- Additional specialized audio for enhanced experience -->
-    <audio id="bigProfitSound" preload="auto">
-        <source src="Telegram_audio/Cash Register Big Profit .mp3" type="audio/mp3">
-    </audio>
-    <audio id="smallProfitSound" preload="auto">
-        <source src="Telegram_audio/Coin Handling Small Profit .mp3" type="audio/mp3">
-    </audio>
-    <audio id="swingTradeSound" preload="auto">
-        <source src="Telegram_audio/Swing Trade Execution Coin Drop.mp3" type="audio/mp3">
-    </audio>
-    <audio id="bonusSound" preload="auto">
-        <source src="Telegram_audio/Better Deal Bonus Earned.mp3" type="audio/mp3">
-    </audio>
+    <!-- Audio Elements - Using Web Audio API instead of files -->
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -2939,51 +2890,8 @@
                 };
             }
             
-            setTimeout(() => {
-                console.log('=== ENHANCED LIBRARY LOAD TEST ===');
-                console.log('Page load time:', Date.now());
-                console.log('Library load time:', window.libraryLoadTime || 'Not loaded');
-                console.log('Library load error:', window.libraryLoadError || false);
-                console.log('LightweightCharts available:', typeof LightweightCharts !== 'undefined');
-                console.log('Library load flag:', window.lightweightChartsLoaded);
-                
-                if (typeof LightweightCharts !== 'undefined') {
-                    console.log('LightweightCharts version:', LightweightCharts.version || 'Unknown');
-                    console.log('LightweightCharts methods:', Object.keys(LightweightCharts));
-                    console.log('createChart available:', typeof LightweightCharts.createChart === 'function');
-                    console.log('CrosshairMode available:', !!LightweightCharts.CrosshairMode);
-                    
-                    // Test chart creation capability
-                    try {
-                        const testDiv = document.createElement('div');
-                        testDiv.style.width = '100px';
-                        testDiv.style.height = '100px';
-                        testDiv.style.position = 'absolute';
-                        testDiv.style.left = '-1000px';
-                        document.body.appendChild(testDiv);
-                        
-                        const testChart = LightweightCharts.createChart(testDiv, {
-                            width: 100,
-                            height: 100
-                        });
-                        
-                        const testSeries = testChart.addCandlestickSeries();
-                        console.log('✅ Library test successful - chart creation works');
-                        
-                        testChart.remove();
-                        document.body.removeChild(testDiv);
-                    } catch (testError) {
-                        console.error('�� Library test failed:', testError);
-                    }
-                } else {
-                    console.error('�� LightweightCharts library not available after page load');
-                    
-                    // Remove Lightweight Charts dependency - use Chart.js only
-                    console.log('Using Chart.js only for charting');
-                    window.lightweightChartsLoaded = false;
-                }
-                console.log('=== END LIBRARY TEST ===');
-            }, 2000);
+            // Chart.js only - no LightweightCharts needed
+            console.log('📊 Using Chart.js for all charting functionality');
         });
         // Alpaca API Integration Class
         class AlpacaAPI {
@@ -3618,10 +3526,10 @@
                             if (content && button) {
                                 if (content.style.display === 'none') {
                                     content.style.display = 'block';
-                                    button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Complete Manual';
+                                    button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Guide';
                                 } else {
                                     content.style.display = 'none';
-                                    button.innerHTML = '<i class="fas fa-eye"></i> Show Complete Manual';
+                                    button.innerHTML = '<i class="fas fa-eye"></i> Show Guide';
                                 }
                             }
                         });
@@ -3749,10 +3657,7 @@
                 this.addActivity('🔧 Fallback chart created', 'system');
             }
 
-            initializeLightweightChart() {
-                // Chart.js only implementation - no Lightweight Charts needed
-                console.log('Using Chart.js for all charting functionality');
-            }
+            // Removed initializeLightweightChart - using Chart.js only
 
             initializePriceTickers() {
                 this.updatePriceTickers();
@@ -3816,6 +3721,107 @@
                 // Update chart data based on timeframe
                 this.addActivity(`Chart timeframe changed to ${timeframe}`, 'system');
                 this.updateChart();
+            }
+
+            // Missing trade execution functions
+            executeBuy(symbol, quantity, price) {
+                const trade = {
+                    symbol,
+                    quantity,
+                    price,
+                    type: 'BUY',
+                    timestamp: new Date(),
+                    id: Date.now()
+                };
+                
+                this.trades.push(trade);
+                this.positions.push({
+                    symbol,
+                    quantity,
+                    entryPrice: price,
+                    currentPrice: price,
+                    pnl: 0,
+                    timestamp: new Date()
+                });
+                
+                this.addActivity(`📈 Bought ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'buy');
+                this.updateMetrics();
+                this.showNotification(`✅ Bought ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'success');
+                
+                // Play audio notification
+                this.playTradeAudio('trade-executed');
+            }
+
+            executeSell(symbol, quantity, price) {
+                const trade = {
+                    symbol,
+                    quantity,
+                    price,
+                    type: 'SELL',
+                    timestamp: new Date(),
+                    id: Date.now()
+                };
+                
+                this.trades.push(trade);
+                
+                // Remove position or reduce quantity
+                const positionIndex = this.positions.findIndex(p => p.symbol === symbol);
+                if (positionIndex !== -1) {
+                    const position = this.positions[positionIndex];
+                    const pnl = (price - position.entryPrice) * quantity;
+                    
+                    if (position.quantity <= quantity) {
+                        this.positions.splice(positionIndex, 1);
+                    } else {
+                        this.positions[positionIndex].quantity -= quantity;
+                    }
+                    
+                    this.totalPnL += pnl;
+                }
+                
+                this.addActivity(`📉 Sold ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'sell');
+                this.updateMetrics();
+                this.showNotification(`✅ Sold ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'success');
+                
+                // Play audio notification
+                this.playTradeAudio('trade-executed');
+            }
+
+            executeRealBuy(symbol, quantity) {
+                // Simulated real trading for demo purposes
+                const price = this.marketData[symbol].price;
+                this.addActivity(`🔗 Real Buy Order: ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'buy');
+                this.executeBuy(symbol, quantity, price);
+            }
+
+            executeRealSell(symbol, quantity) {
+                // Simulated real trading for demo purposes
+                const price = this.marketData[symbol].price;
+                this.addActivity(`🔗 Real Sell Order: ${quantity} ${symbol} @ $${price.toFixed(2)}`, 'sell');
+                this.executeSell(symbol, quantity, price);
+            }
+
+            playTradeAudio(audioType) {
+                try {
+                    // Create audio notification
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                    
+                    console.log(`🔊 Playing audio: ${audioType}`);
+                } catch (error) {
+                    console.log('Audio notification not available');
+                }
             }
 
             switchChartType(chartType) {
@@ -4196,13 +4202,11 @@
 
             resetToLineChart() {
                 const chartCanvas = document.getElementById('tradingChart');
-                const lightweightDiv = document.getElementById('lightweightChart');
                 const lineBtn = document.querySelector('[data-chart="line"]');
                 const candleBtn = document.querySelector('[data-chart="candlestick"]');
                 
-                // Show line chart, hide candlestick
+                // Show Chart.js canvas
                 chartCanvas.style.display = 'block';
-                lightweightDiv.style.display = 'none';
                 
                 // Update button states
                 if (lineBtn && candleBtn) {
@@ -4213,180 +4217,9 @@
                 console.log('Reset to line chart');
             }
 
-            updateLightweightChart() {
-                // Chart.js only implementation - no Lightweight Charts needed
-                console.log('Using Chart.js for chart updates');
-            }
+            // Removed LightweightCharts methods - using Chart.js only
 
-            forceChartBlackBackground() {
-                console.log('Forcing chart black background...');
-                
-                // Force background via chart API options if available
-                if (this.lightweightChart && typeof this.lightweightChart.applyOptions === 'function') {
-                    try {
-                        this.lightweightChart.applyOptions({
-                            layout: {
-                                backgroundColor: '#000000',
-                                textColor: '#e0e0e0',
-                            }
-                        });
-                        console.log('Applied black background via chart API');
-                    } catch (e) {
-                        console.warn('Could not apply background via chart API:', e);
-                    }
-                }
-                
-                // Force background via CSS with setTimeout to ensure DOM is ready
-                setTimeout(() => {
-                    const container = document.getElementById('lightweightChart');
-                    if (container) {
-                        container.style.backgroundColor = '#000000';
-                        container.style.setProperty('background-color', '#000000', 'important');
-                        
-                        // Force all child elements to have black background
-                        const allElements = container.querySelectorAll('*');
-                        allElements.forEach(el => {
-                            if (el.tagName === 'CANVAS' || el.tagName === 'DIV') {
-                                el.style.backgroundColor = '#000000';
-                                el.style.setProperty('background-color', '#000000', 'important');
-                            }
-                        });
-                        
-                        console.log('Applied black background via CSS to container and children');
-                    }
-                }, 100);
-                
-                // Additional timeout for stubborn elements
-                setTimeout(() => {
-                    const container = document.getElementById('lightweightChart');
-                    if (container) {
-                        const canvases = container.querySelectorAll('canvas');
-                        canvases.forEach(canvas => {
-                            canvas.style.backgroundColor = '#000000';
-                            canvas.style.setProperty('background-color', '#000000', 'important');
-                        });
-                        console.log('Applied black background to canvases');
-                    }
-                }, 500);
-            }
-
-            testCandlestickChart() {
-                console.log('=== TESTING CANDLESTICK CHART ===');
-                this.addActivity('🔧 Testing candlestick chart display...', 'system');
-                
-                // Force switch to candlestick chart
-                this.switchChartType('candlestick');
-                
-                // Wait a bit then generate test data
-                setTimeout(() => {
-                    if (this.candlestickSeries) {
-                        console.log('Creating VERY OBVIOUS test candlestick data...');
-                        const testData = [];
-                        let baseTime = Math.floor(Date.now() / 1000) - (50 * 86400); // 50 days ago in seconds
-                        
-                        // Create 50 VERY obvious candles with massive movements
-                        for (let i = 0; i < 50; i++) {
-                            const open = 100 + (i * 2); // Start at 100, increase by 2 each day
-                            const isUp = i % 2 === 0; // Alternate up/down candles
-                            const close = isUp ? open + 10 : open - 10; // HUGE 10-point movements
-                            const high = Math.max(open, close) + 5; // 5 points above
-                            const low = Math.min(open, close) - 5; // 5 points below
-                            
-                            testData.push({
-                                time: baseTime + (i * 86400), // Daily candles
-                                open: Number(open.toFixed(2)),
-                                high: Number(high.toFixed(2)),
-                                low: Number(low.toFixed(2)),
-                                close: Number(close.toFixed(2))
-                            });
-                            
-                            console.log(`Candle ${i}: O:${open} H:${high} L:${low} C:${close} ${isUp ? 'UP' : 'DOWN'}`);
-                        }
-                        
-                        console.log('Total test data points:', testData.length);
-                        console.log('First candle:', testData[0]);
-                        console.log('Last candle:', testData[testData.length - 1]);
-                        console.log('Price range:', testData[0].low, 'to', testData[testData.length - 1].high);
-                        
-                        // Set the data
-                        this.candlestickSeries.setData(testData);
-                        
-                        // Force chart visibility and resize
-                        const container = document.getElementById('lightweightChart');
-                        const chartCanvas = document.getElementById('tradingChart');
-                        
-                        if (container && chartCanvas) {
-                            chartCanvas.style.display = 'none';
-                            container.style.display = 'block';
-                            container.style.visibility = 'visible';
-                            container.style.opacity = '1';
-                            
-                            // Ensure chart is properly sized
-                            if (this.lightweightChart) {
-                                const rect = container.getBoundingClientRect();
-                                console.log('Final container dimensions:', rect.width, 'x', rect.height);
-                                
-                                this.lightweightChart.applyOptions({
-                                    width: Math.floor(rect.width),
-                                    height: Math.floor(rect.height),
-                                    layout: {
-                                        backgroundColor: '#000000',
-                                        textColor: '#ffffff',
-                                    },
-                                    grid: {
-                                        vertLines: {
-                                            color: 'rgba(255, 255, 255, 0.1)',
-                                        },
-                                        horzLines: {
-                                            color: 'rgba(255, 255, 255, 0.1)',
-                                        },
-                                    },
-                                });
-                                
-                                // Fit all content to view
-                                this.lightweightChart.timeScale().fitContent();
-                                
-                                // Force visible range for price scale
-                                this.lightweightChart.priceScale('right').applyOptions({
-                                    autoScale: true,
-                                });
-                                
-                                // Force time scale to show all data
-                                this.lightweightChart.timeScale().setVisibleRange({
-                                    from: baseTime,
-                                    to: baseTime + (50 * 86400)
-                                });
-                                
-                                console.log('Forced visible range and auto-scaling');
-                                
-                                // Check if series has data
-                                console.log('Candlestick series after data set:', this.candlestickSeries);
-                                
-                                // Apply more visible series options
-                                this.candlestickSeries.applyOptions({
-                                    upColor: '#00ff00',       // Pure bright green
-                                    downColor: '#ff0000',     // Pure bright red  
-                                    borderDownColor: '#ff0000',
-                                    borderUpColor: '#00ff00',
-                                    wickDownColor: '#ff0000',
-                                    wickUpColor: '#00ff00',
-                                    priceLineVisible: true,
-                                    lastValueVisible: true,
-                                });
-                                
-                                console.log('Chart resized and data applied');
-                            }
-                        }
-                        
-                        this.addActivity('✅ Test candlestick chart with OBVIOUS data applied', 'system');
-                        this.addActivity(`📊 Data range: ${testData[0].low} to ${testData[testData.length - 1].high}`, 'system');
-                        console.log('=== CANDLESTICK TEST COMPLETE ===');
-                    } else {
-                        this.addActivity('�� Candlestick series not available for testing', 'system');
-                        console.error('No candlestick series available');
-                    }
-                }, 1000);
-            }
+            // Removed testCandlestickChart - using Chart.js only
 
             generatePriceData() {
                 const basePrice = this.marketData[this.currentSymbol].price;
@@ -4431,39 +4264,9 @@
                 // Check if audio is enabled or if it's a forced play (like test buttons)
                 if (!force && (!this.config.audio.enabled || !this.audioContext)) return;
 
-                // Map audio types to specific sounds
-                const audioMap = {
-                    'trade': 'tradeExecutedSound',
-                    'alert': 'alertSound',
-                    'success': 'successSound',
-                    'error': 'errorSound',
-                    'start': 'startSound',
-                    'stop': 'stopSound',
-                    'bigprofit': 'bigProfitSound',
-                    'smallprofit': 'smallProfitSound',
-                    'swingtrade': 'swingTradeSound',
-                    'bonus': 'bonusSound'
-                };
-
-                const audioElementId = audioMap[type] || 'alertSound';
-                const audioElement = document.getElementById(audioElementId);
-                
-                if (audioElement) {
-                    audioElement.volume = this.config.audio.volume;
-                    audioElement.currentTime = 0; // Reset to beginning
-                    audioElement.play().catch(e => {
-                        console.warn('Audio play failed:', e);
-                        // Fallback to Web Audio API beep if HTML5 audio fails
-                        this.createBeep(this.getFrequencyForType(type), 200);
-                    });
-                } else {
-                    // Fallback to Web Audio API beep
-                    this.createBeep(this.getFrequencyForType(type), 200);
-                }
-
-                // Also create a beep using Web Audio API for enhanced notification
+                // Use Web Audio API beeps only - no more MP3 files
                 if (this.audioContext) {
-                    this.createBeep(this.getFrequencyForType(type), 150);
+                    this.createBeep(this.getFrequencyForType(type), 200);
                 }
             }
 

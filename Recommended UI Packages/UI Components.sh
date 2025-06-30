@@ -1,1 +1,0 @@
-npm install react-gauges react-glassmorphism react-draggable
